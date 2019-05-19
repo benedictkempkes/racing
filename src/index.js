@@ -1,8 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const Index = () => {
-    return <div>Hello React!</div>;
-};
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducer from './Reducer';
+import App from './App';
 
-ReactDOM.render(<Index />, document.getElementById("index"));
+const store = createStore(reducer);
+
+const rootElement = document.getElementById('index')
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    rootElement
+)
