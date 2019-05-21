@@ -1,0 +1,54 @@
+{
+    "data":{
+        "profile": {
+            "name": "Gosila",
+            "psn": "Gosila_",
+            "series": [
+                {
+                    "id": 1,
+                    "title": "GT Serie Liga 3 (7/10)",
+                    "rank": 11
+                },
+                {
+                    "id": 2,
+                    "title": "GT Serie Liga 2 (Beendet)",
+                    "rank": 3
+                }
+            ],
+            "wm": {
+                "titel": 0,
+                "top3": 1,
+                "top5": 3
+            },
+            "races": {
+                "wins": 0,
+                "top3": 1,
+                "top5": 3,
+                "fastest": 2
+            }
+        },
+        "series": [
+            {
+                "id": 1,
+                "title": "GT Serie Liga 1",
+                "nextRace": "Nürburgring (20:00 Uhr 01.01.2019)"
+            },
+            {
+                "id": 2,
+                "title": "GT Serie Liga 2",
+                "nextRace": "Redbull Ring (20:00 Uhr 02.02.2019)"
+            },
+            {
+                "id": 3,
+                "title": "GT Serie Liga 3",
+                "nextRace": "Suzuka (20:00 Uhr 04.01.2019)"
+            }
+        ],
+        "serie": [
+
+        ],
+        "ergebnis":[
+
+        ]
+    }
+}

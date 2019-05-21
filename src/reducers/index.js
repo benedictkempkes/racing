@@ -1,18 +1,44 @@
-import { FETCH_SERIES_BEGIN, FETCH_SERIES_SUCCESS, FETCH_SERIES_FAILURE } from '../constants';
+import { FETCH_SERIES_BEGIN, FETCH_SERIES_SUCCESS, FETCH_SERIES_FAILURE, HOMEPAGE, PROFILE, ARCHIVE, PAGINATION } from '../constants';
 
 const initialState = {
-    view: 0,
+    pagination: HOMEPAGE,
     profile: {},
     series: {},
-    loading: false
+    loading: true,
+    error: null
 };
 
 const reducer = (state = initialState, action) => {
-    console.log(state);
     switch (action.type) {
         case FETCH_SERIES_BEGIN: {
-            console.log('INIT!');
-            return state;
+            console.log('Start!');
+            return {
+                ...state,
+                loading: true,
+            };
+        }
+        case FETCH_SERIES_SUCCESS: {
+            console.log('Success!');
+            return {
+                ...state,
+                loading: false,
+                profile: action.payload.profile,
+                series: action.payload.series
+            };
+        }
+        case FETCH_SERIES_FAILURE: {
+            console.log('Failure!');
+            return {
+                ...state,
+                loading: false,
+                error: action.payload.error
+            };
+        }
+        case PAGINATION: {
+            return {
+                ...state,
+                pagination: action.page
+            };
         }
         default: {
             return state;

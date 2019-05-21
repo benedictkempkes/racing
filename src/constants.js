@@ -1,3 +1,8 @@
 export const FETCH_SERIES_BEGIN = 'FETCH_SERIES_BEGIN';
 export const FETCH_SERIES_SUCCESS = 'FETCH_SERIES_SUCCESS';
 export const FETCH_SERIES_FAILURE = 'FETCH_SERIES_FAILURE';
+export const PAGINATION = 'PAGINATION';
+
+export const HOMEPAGE = 'HOMEPAGE';
+export const PROFILE = 'PROFILE';
+export const ARCHIVE = 'ARCHIVE'

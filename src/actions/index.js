@@ -1,12 +1,12 @@
-import { FETCH_SERIES_BEGIN, FETCH_SERIES_SUCCESS, FETCH_SERIES_FAILURE} from '../constants';
+import { FETCH_SERIES_BEGIN, FETCH_SERIES_SUCCESS, FETCH_SERIES_FAILURE, PAGINATION} from '../constants';
 
 export const init = () => {
     return dispatch => {
-        return fetch('http://localhost:3000/series')
+        dispatch(fetchSeriesBegin());
+        return fetch('http://localhost:3000/data')
             .then(res => res.json())
             .then(json => {
                 dispatch(fetchSeriesSuccess(json));
-                console.log(json);
                 return json;
             })
             .catch(error => dispatch(fetchSeriesFailure(error)));
@@ -17,12 +17,17 @@ export const fetchSeriesBegin = () => ({
     type: FETCH_SERIES_BEGIN
 });
 
-export const fetchSeriesSuccess = series => ({
+export const fetchSeriesSuccess = data => ({
     type: FETCH_SERIES_SUCCESS,
-    payload: {series}
+    payload: data
 });
 
 export const fetchSeriesFailure = error => ({
     type: FETCH_SERIES_FAILURE,
-    payload: { error}
+    payload: error
+});
+
+export const changePage = page => ({
+    type: PAGINATION,
+    page
 });
