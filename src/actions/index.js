@@ -3,10 +3,11 @@ import { FETCH_SERIES_BEGIN, FETCH_SERIES_SUCCESS, FETCH_SERIES_FAILURE, PAGINAT
 export const init = () => {
     return dispatch => {
         dispatch(fetchSeriesBegin());
-        return fetch('http://localhost:3000/data')
+        return fetch('http://localhost:3000/series')
             .then(res => res.json())
             .then(json => {
                 dispatch(fetchSeriesSuccess(json));
+                console.log(json);
                 return json;
             })
             .catch(error => dispatch(fetchSeriesFailure(error)));

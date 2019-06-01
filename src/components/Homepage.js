@@ -5,14 +5,14 @@ import { CardContent, Typography, CardActions, Button } from '@material-ui/core'
 
 const Homepage = ({ series, loading }) => (
     <div>
-        {(loading) ?  null : series.map(serie => (
-            <Card key={serie.id}>
+        {(loading) ? undefined : series.map((serie, index) => (
+            <Card key={index}>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {serie.title}
+                        {serie.name}
                     </Typography>
                     <Typography component="p">
-                        {serie.nextRace}
+                        {serie.next}
                     </Typography>
                 </CardContent>
                 <CardActions>

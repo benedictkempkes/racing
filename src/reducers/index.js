@@ -9,6 +9,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+    console.log(action);
     switch (action.type) {
         case FETCH_SERIES_BEGIN: {
             console.log('Start!');
@@ -22,8 +23,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                profile: action.payload.profile,
-                series: action.payload.series
+                series: action.payload
             };
         }
         case FETCH_SERIES_FAILURE: {

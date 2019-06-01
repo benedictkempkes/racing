@@ -9,9 +9,6 @@ const Navbar = () => (
         < Navigation page={HOMEPAGE}>
             Rennserien
         </ Navigation>
-        < Navigation page={PROFILE}>
-            Profil
-        </ Navigation>
         < Navigation page={ARCHIVE}>
             Archiv
         </ Navigation>

@@ -5,4 +5,4 @@ export const PAGINATION = 'PAGINATION';
 
 export const HOMEPAGE = 'HOMEPAGE';
 export const PROFILE = 'PROFILE';
-export const ARCHIVE = 'ARCHIVE'
+export const ARCHIVE = 'ARCHIVE';
