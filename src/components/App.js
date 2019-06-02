@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from './Navbar';
-import Views from '../containers/Views'
+import Navbar from './navigation/Navbar';
+import ViewController from './navigation/ViewController'
 
 const App = () => (
     <div>
         <Navbar />
-        <Views />
+        <ViewController />
     </div>
 )
 

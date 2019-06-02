@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import View from '../components/View'
+import View from './View'
 
 
 const mapStateToProps = state => ({

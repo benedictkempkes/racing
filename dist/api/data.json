@@ -27,33 +27,30 @@
     ],
     "kalender": [
         [
-            "name",
             "Rennen 1",
+            "Nürburgring",
+            "http://localhost:3000/ergebnisse"
+        ],
+        [
             "Rennen 2",
-            "Rennen 3"
+            "Nürburgring",
+            "http://localhost:3000/ergebnisse"
         ],
         [
-            "ort",
+            "Rennen 3",
             "Nürburgring",
-            "Nürburgring",
-            "Nürburgring"
-        ],
-        [
-            "Ergebnisse",
-            "url",
-            "url",
-            "url"
+            ""
         ]
     ],
     "driverS": [
         [
             "Nummer",
-            "Fahrer",
+            "Name",
             "Team",
             "R1",
             "R2",
             "R3",
-            "Punkte"
+            "Pkt"
         ],
         [
             "1",
@@ -123,15 +120,33 @@
     ],
     "ergebnisse": [
         [
+            "Best Lap",
+            "Manu2011",
+            "01: 45.302"
+        ],
+        [
             "P",
             "Name",
             "GAP",
-            "Pkt",
-            "Best Lap",
-            "Manu2011",	"01: 45.302"
+            "Pkt"
         ],
-        ["1", "Stefan1992", "41: 03.452", "30"],		
-        ["2", "thotti1981", "20.0", "20"],		
-        ["3", "Gosila", "20.0", "15"]
+        [
+            "1",
+            "Stefan1992",
+            "41: 03.452",
+            "30"
+        ],		
+        [
+            "2",
+            "thotti1981",
+            "20.0",
+            "20"
+        ],		
+        [
+            "3",
+            "Gosila",
+            "20.0",
+            "15"
+        ]
     ]
 }

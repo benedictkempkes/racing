@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import PrimaryButton from '../components/PrimaryButton'
-import { changePage } from '../actions';
+import PrimaryButton from '../elements/PrimaryButton'
+import { changePage } from '../../actions';
 
 
 const mapStateToProps = (state, ownProps) => ({
