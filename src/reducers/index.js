@@ -2,17 +2,25 @@ import {
     FETCH_SERIES_BEGIN,
     FETCH_SERIES_SUCCESS,
     FETCH_SERIES_FAILURE,
-    HOMEPAGE,
+    GOSILA,
+    TABELLE,
     PAGINATION,
+    PAGINATIONSECOND,
     FETCH_DATA_BEGIN,
     FETCH_DATA_SUCCESS,
     FETCH_DATA_FAILURE, } from '../constants';
 
 const initialState = {
-    pagination: HOMEPAGE,
-    profile: undefined,
+    pagination: GOSILA,
+    paginationSecond: 'FAHRERWERTUNG',
     series: undefined,
     serie: undefined,
+    calendar: undefined,
+    standings: {
+        driver: undefined,
+        team: undefined
+    },
+    result: undefined,
     data: undefined,
     loading: true,
     error: null
@@ -46,7 +54,16 @@ const reducer = (state = initialState, action) => {
         case PAGINATION: {
             return {
                 ...state,
-                pagination: action.page
+                pagination: action.page,
+                paginationSecond: 'FAHRERWERTUNG',
+                leftNav: action.back,
+                rightNav: action.next
+            };
+        }
+        case PAGINATIONSECOND: {
+            return {
+                ...state,
+                paginationSecond: action.page
             };
         }
         case FETCH_DATA_BEGIN: {
@@ -63,7 +80,13 @@ const reducer = (state = initialState, action) => {
                 loading: false,
                 data: action.payload,
                 pagination: action.page,
-                serie: action.serie
+                serie: action.serie,
+                calendar: action.payload.kalender,
+                result: action.payload.ergebnisse,
+                standings: {
+                    driver: action.payload.driverS,
+                    team: action.payload.teamS
+                }
             };
         }
         case FETCH_DATA_FAILURE: {

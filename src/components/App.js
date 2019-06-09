@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from './navigation/Navbar';
-import ViewController from './navigation/ViewController'
+import Navbar from './navbar/Navbar';
+import ViewController from './views/ViewController'
 
 const App = () => (
     <div>

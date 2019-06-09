@@ -1,13 +1,21 @@
-import { connect } from 'react-redux';
 import React from 'react';
 
-const Result = ({ bestL, tablehead, tablebody  }) => (
+const getRow = (data, start, end = data.length) => {
+    let rows = [];
+    for (let i = start; i < end; i++){
+        rows.push(data[i]);
+    }
+    return rows;
+}
+
+const Standing = ({ data }) => (
     <div>
         <table>
             <thead>
                 <tr>
+                    <td>P</td>
                     {
-                        tablehead.map((item, index) => (
+                        data[0].map((item, index) => (
                             <td key={index}>{item}</td>
                         ))
                     }
@@ -15,8 +23,9 @@ const Result = ({ bestL, tablehead, tablebody  }) => (
             </thead>
             <tbody>
                 {
-                    tablebody.map((row, index) => (
+                    getRow(data, 1).map((row, index) => (
                         <tr key={index}>
+                            <td>{index + 1}</td>
                             {
                                 row.map((col, index) => (
                                     <td key={index}>{col}</td>
@@ -27,16 +36,7 @@ const Result = ({ bestL, tablehead, tablebody  }) => (
                 }
             </tbody>
         </table>
-        <div>
-            {bestL}
-        </div>
     </div>
 )
 
-const mapStateToProps = (state) => ({
-    bestL: state.data.shift(),
-    tablehead: state.data.shift(),
-    tablebody: state.data
-})
-
-export default connect(mapStateToProps)(Result)
+export default Standing

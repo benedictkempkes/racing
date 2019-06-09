@@ -1,10 +1,12 @@
 import { connect } from 'react-redux'
-import PrimaryButton from '../elements/PrimaryButton'
-import { changePage } from '../../actions';
+import Button from '../../elements/Button';
+
+import { changePage } from '../../../actions';
 
 
 const mapStateToProps = (state, ownProps) => ({
-    active: ownProps.page === state.pagination
+    active: ownProps.page === state.paginationSecond,
+    style: ownProps.style
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -14,4 +16,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(PrimaryButton)
+)(Button)

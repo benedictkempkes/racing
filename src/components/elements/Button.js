@@ -1,6 +1,7 @@
+
 import React from 'react';
 
-const Back = ({ children, onClick, active }) => (
+const PrimaryButton = ({ active, children, onClick }) => (
     <button
         onClick={onClick}
         disabled={active}
@@ -9,4 +10,4 @@ const Back = ({ children, onClick, active }) => (
     </button>
 )
 
-export default Back
+export default PrimaryButton

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
-import { fetchDataBegin, fetchDataSuccess, fetchDataFailure} from '../../actions';
-import SecondaryButton from '../elements/SecondaryButton';
-import Back from '../elements/Back';
+import { fetchDataBegin, fetchDataSuccess, fetchDataFailure } from '../../../actions';
+import Button from '../../elements/Button';
 
 const fetchData = (dispatch, ownProps) => {
     dispatch(fetchDataBegin());
@@ -16,7 +15,8 @@ const fetchData = (dispatch, ownProps) => {
 
 
 const mapStateToProps = (state, ownProps) => ({
-    active: ownProps.page === state.pagination
+    active: ownProps.page === state.pagination,
+    style: ownProps.style
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -26,4 +26,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(SecondaryButton, Back)
+)(Button)

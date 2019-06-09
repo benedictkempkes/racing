@@ -3,150 +3,184 @@
         {
             "name": "GT Serie Liga 1",
             "next": "Nürburgring (20:00Uhr 01.01.)",
-            "urlReglement": "",
-            "urlDriverS": "http://localhost:3000/driverS",
-            "urlTeamS": "http://localhost:3000/teamS",
-            "urlKalender": "http://localhost:3000/kalender"
+            "current": "3",
+            "team": "Seidenstadt",
+            "urlSerie": "http://localhost:3000/serie"
         },
         {
-            "name": "GT Serie Liga 2",
+            "name": "GT Serie Liga 1",
             "next": "Nürburgring (20:00Uhr 01.01.)",
-            "urlReglement": "",
-            "urlDriverS": "http://localhost:3000/driverS",
-            "urlTeamS": "http://localhost:3000/teamS",
-            "urlKalender": "http://localhost:3000/kalender"
+            "current": "",
+            "team": "Seidenstadt",
+            "urlSerie": "http://localhost:3000/serie"
         },
         {
-            "name": "GT Serie Liga 3",
+            "name": "GT Serie Liga 1",
             "next": "Nürburgring (20:00Uhr 01.01.)",
-            "urlReglement": "",
-            "urlDriverS": "http://localhost:3000/driverS",
-            "urlTeamS": "http://localhost:3000/teamS",
-            "urlKalender": "http://localhost:3000/kalender"
+            "current": "3",
+            "team": "",
+            "urlSerie": "http://localhost:3000/serie"
         }
     ],
-    "kalender": [
-        [
-            "Rennen 1",
-            "Nürburgring",
-            "http://localhost:3000/ergebnisse"
+    "serie": {
+        "kalender": [
+            {
+                "Strecke": "Nürburgring",
+                "Zeit": "20:00 Uhr 01.01.2019",
+                "Position": "3"
+            },
+            {
+                "Strecke": "Fuji",
+                "Zeit": "20:00 Uhr 01.01.2019",
+                "Position": ""
+            },
+            {
+                "Strecke": "Monza",
+                "Zeit": "20:00 Uhr 01.01.2019",
+                "Position": ""
+            }
         ],
-        [
-            "Rennen 2",
-            "Nürburgring",
-            "http://localhost:3000/ergebnisse"
+        "driverS": [
+            [
+                "Nummer",
+                "Name",
+                "Team",
+                "R1",
+                "R2",
+                "R3",
+                "Pkt"
+            ],
+            [
+                "1",
+                "Manu2011",
+                "TRT!",
+                "25",
+                "30",
+                "25",
+                "100"
+            ],
+            [
+                "1",
+                "Manu2011",
+                "TRT!",
+                "25",
+                "30",
+                "25",
+                "100"
+            ],
+            [
+                "1",
+                "Manu2011",
+                "TRT!",
+                "25",
+                "-",
+                "",
+                "100"
+            ]
         ],
-        [
-            "Rennen 3",
-            "Nürburgring",
-            ""
+        "teamS": [
+            [
+                "Team",
+                "Fahrer1",
+                "Fahrer2",
+                "R1",
+                "R2",
+                "R3",
+                "Punkte"
+            ],
+            [
+                "TRT!",
+                "Manu2011",
+                "Gosila",
+                "25",
+                "30",
+                "25",
+                "100"
+            ],
+            [
+                "TRT!",
+                "Manu2011",
+                "Gosila",
+                "25",
+                "30",
+                "25",
+                "100"
+            ],
+            [
+                "TRT!",
+                "Manu2011",
+                "Gosila",
+                "25",
+                "30",
+                "25",
+                "100"
+            ]
+        ],
+        "ergebnisse": [
+            [
+                "Best Lap",
+                "Manu2011",
+                "01: 45.302"
+            ],
+            [
+                "P",
+                "Name",
+                "Team",
+                "GAP",
+                "Pkt"
+            ],
+            [
+                "1",
+                "Stefan1992",
+                "Seidenstadt",
+                "41: 03.452",
+                "30"
+            ],		
+            [
+                "2",
+                "thotti1981",
+                "TRT!",
+                "20.0",
+                "20"
+            ],		
+            [
+                "3",
+                "Gosila",
+                "Seidenstadt",
+                "20.0",
+                "15"
+            ]
+        ],
+        "ergebnisse2": [
+            [
+                "Best Lap",
+                "",
+                ""
+            ],
+            [
+                "P",
+                "Name",
+                "GAP",
+                "Pkt"
+            ],
+            [
+                "1",
+                "",
+                "",
+                "30"
+            ],
+            [
+                "2",
+                "",
+                "",
+                "20"
+            ],
+            [
+                "3",
+                "",
+                "",
+                "15"
+            ]
         ]
-    ],
-    "driverS": [
-        [
-            "Nummer",
-            "Name",
-            "Team",
-            "R1",
-            "R2",
-            "R3",
-            "Pkt"
-        ],
-        [
-            "1",
-            "Manu2011",
-            "TRT!",
-            "25",
-            "30",
-            "25",
-            "100"
-        ],
-        [
-            "1",
-            "Manu2011",
-            "TRT!",
-            "25",
-            "30",
-            "25",
-            "100"
-        ],
-        [
-            "1",
-            "Manu2011",
-            "TRT!",
-            "25",
-            "-",
-            "",
-            "100"
-        ]
-    ],
-    "teamS": [
-        [
-            "Team",
-            "Fahrer1",
-            "Fahrer2",
-            "R1",
-            "R2",
-            "R3",
-            "Punkte"
-        ],
-        [
-            "TRT!",
-            "Manu2011",
-            "Gosila",
-            "25",
-            "30",
-            "25",
-            "100"
-        ],
-        [
-            "TRT!",
-            "Manu2011",
-            "Gosila",
-            "25",
-            "30",
-            "25",
-            "100"
-        ],
-        [
-            "TRT!",
-            "Manu2011",
-            "Gosila",
-            "25",
-            "30",
-            "25",
-            "100"
-        ]
-    ],
-    "ergebnisse": [
-        [
-            "Best Lap",
-            "Manu2011",
-            "01: 45.302"
-        ],
-        [
-            "P",
-            "Name",
-            "GAP",
-            "Pkt"
-        ],
-        [
-            "1",
-            "Stefan1992",
-            "41: 03.452",
-            "30"
-        ],		
-        [
-            "2",
-            "thotti1981",
-            "20.0",
-            "20"
-        ],		
-        [
-            "3",
-            "Gosila",
-            "20.0",
-            "15"
-        ]
-    ]
+    }
 }

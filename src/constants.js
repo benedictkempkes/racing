@@ -6,12 +6,61 @@ export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
 export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE';
 
 export const PAGINATION = 'PAGINATION';
+export const PAGINATIONSECOND = 'PAGINATIONSECOND';
 
-export const HOMEPAGE = 'HOMEPAGE';
-export const PROFILE = 'PROFILE';
-export const ARCHIVE = 'ARCHIVE';
-export const REGLEMENT = 'REGLEMENT';
-export const FAHRERWERTUNG = 'FAHRERWERTUNG';
-export const TEAMWERTUNG = 'TEAMWERTUNG';
-export const RENNKALENDER = 'RENNKALENDER';
-export const ERGEBNIS = 'ERGEBNIS';
+
+export const GOSILA = {
+    PAGINATION: 'GOSILA',
+    NAME: 'Gosila',
+    BACK: undefined,
+    NEXT: undefined
+};
+
+export const FAHRERWERTUNG = {
+    PAGINATION: 'FAHRERWERTUNG',
+    NAME: 'Fahrerwertung',
+    BACK: GOSILA,
+    NEXT: {
+        PAGINATION: 'RENNKALENDER',
+        NAME: 'Rennkalender'
+    }
+};
+
+export const RENNKALENDER = {
+    PAGINATION: 'RENNKALENDER',
+    NAME: 'Rennkalender',
+    BACK: {
+        PAGINATION: 'GOSILA',
+        NAME: 'Gosila'
+    },
+    NEXT: {
+        PAGINATION: 'FAHRERWERTUNG',
+        NAME: 'Fahrerwertung'
+    }
+};
+
+export const ERGEBNIS = {
+    PAGINATION: 'ERGEBNIS',
+    NAME: 'Ergebnis',
+    BACK: {
+        PAGINATION: 'GOSILA',
+        NAME: 'Gosila'
+    },
+    NEXT: {
+        PAGINATION: 'RENNKALENDER',
+        NAME: 'Rennkalender'
+    }
+};
+
+export const HIGHLIGHT = {
+    PAGINATION: 'HIGHLIGHT',
+    NAME: 'Highlight',
+    BACK: {
+        PAGINATION: 'GOSILA',
+        NAME: 'Gosila'
+    },
+    NEXT: {
+        PAGINATION: 'RENNKALENDER',
+        NAME: 'Rennkalender'
+    }
+};

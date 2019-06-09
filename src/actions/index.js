@@ -5,7 +5,8 @@ import {
     FETCH_DATA_BEGIN,
     FETCH_DATA_SUCCESS,
     FETCH_DATA_FAILURE,
-    PAGINATION
+    PAGINATION,
+    PAGINATIONSECOND
 } from '../constants';
 
 export const init = () => {
@@ -36,11 +37,6 @@ export const fetchSeriesFailure = error => ({
     payload: error
 });
 
-export const changePage = page => ({
-    type: PAGINATION,
-    page
-});
-
 export const fetchDataBegin = () => ({
     type: FETCH_DATA_BEGIN
 });
@@ -55,4 +51,14 @@ export const fetchDataSuccess = (data, page, serie) => ({
 export const fetchDataFailure = error => ({
     type: FETCH_DATA_FAILURE,
     payload: error
+});
+
+export const changePage = page => ({
+    type: PAGINATION,
+    page
+});
+
+export const changePageSecond = page => ({
+    type: PAGINATIONSECOND,
+    page
 });
