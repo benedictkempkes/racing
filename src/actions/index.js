@@ -11,14 +11,26 @@ import {
 
 export const init = () => {
     return dispatch => {
-        dispatch(fetchSeriesBegin());
-        return fetch('http://localhost:3000/series')
+        fetch('http://localhost/projects/racingBackend/racing.php', {
+            })
             .then(res => res.json())
+            .then(json => {
+                console.log(json);
+            })
+        .catch(error => dispatch(fetchSeriesFailure(error)));
+
+
+
+
+        /* dispatch(fetchSeriesBegin());
+        return fetch('http://localhost:3000/series', {
+            
+        }).then(res => res.json())
             .then(json => {
                 dispatch(fetchSeriesSuccess(json));
                 return json;
             })
-            .catch(error => dispatch(fetchSeriesFailure(error)));
+            .catch(error => dispatch(fetchSeriesFailure(error))); */
     };
 }
 
