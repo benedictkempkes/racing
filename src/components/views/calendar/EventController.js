@@ -5,10 +5,9 @@ import { fetchDataBegin, fetchResultSuccess, fetchDataFailure, changePage } from
 
 const fetchData = (dispatch, ownProps) => {
     dispatch(fetchDataBegin());
-    console.log(ownProps);
     const parms = {
         name: ownProps.serie['1'],
-        tab: 'R' + (ownProps.race + 1),
+        tab: ownProps.race,
         secondtab: '',
         thirdtab: ''
     }
@@ -34,7 +33,7 @@ const fetchData = (dispatch, ownProps) => {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    active: ownProps.page === state.paginationSecond,
+    active: (ownProps.race)? false : true,
     style: ownProps.style
 })
 

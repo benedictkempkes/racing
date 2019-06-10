@@ -24,9 +24,9 @@ const getPage = activePage => {
     return content;
 }
 
-const View = ({ activePage }) => (
+const View = ({ activePage, loading }) => (
     <div>
-        {getPage(activePage)}
+        {(loading) ? undefined : getPage(activePage)}
     </div>
 )
 

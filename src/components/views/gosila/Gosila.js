@@ -7,7 +7,7 @@ import { FAHRERWERTUNG, RENNKALENDER } from '../../../constants';
 
 const Gosila = ({ series, loading, oldSerie }) => (
     <div >
-        {(loading) ? undefined : series.map((serie, index) => (
+        {series.map((serie, index) => (
             <div key={index}>
                 <h2>{serie['1']}</h2>
                 <h3>{(serie['2']) ? 'Nächstes Rennen: ' + serie['2'] : 'Beendet'}</h3>
