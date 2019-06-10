@@ -3,11 +3,10 @@ import {
     FETCH_SERIES_SUCCESS,
     FETCH_SERIES_FAILURE,
     GOSILA,
-    TABELLE,
     PAGINATION,
     PAGINATIONSECOND,
     FETCH_DATA_BEGIN,
-    FETCH_DATA_SUCCESS,
+    FETCH_SERIE_SUCCESS,
     FETCH_DATA_FAILURE, } from '../constants';
 
 const initialState = {
@@ -73,19 +72,17 @@ const reducer = (state = initialState, action) => {
                 loading: true,
             };
         }
-        case FETCH_DATA_SUCCESS: {
+        case FETCH_SERIE_SUCCESS: {
             console.log('Success!');
+            console.log(action);
             return {
                 ...state,
                 loading: false,
-                data: action.payload,
                 pagination: action.page,
-                serie: action.serie,
-                calendar: action.payload.kalender,
-                result: action.payload.ergebnisse,
+                calendar: action.payload[0],
                 standings: {
-                    driver: action.payload.driverS,
-                    team: action.payload.teamS
+                    driver: action.payload[1],
+                    team: action.payload[2]
                 }
             };
         }

@@ -7,7 +7,7 @@ const Calendar = ({ calendar }) => (
     <div>
         {
             calendar.map((item, index) => (
-                <Event key={index} place={item.Strecke} time={item.Zeit} position={item.Position} />
+                <Event key={index} place={item['1']} time={item['2']} position={item['3']} race={index} />
             ))
         }
     </div>

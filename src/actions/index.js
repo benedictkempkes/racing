@@ -2,35 +2,43 @@ import {
     FETCH_SERIES_BEGIN,
     FETCH_SERIES_SUCCESS,
     FETCH_SERIES_FAILURE,
+
     FETCH_DATA_BEGIN,
-    FETCH_DATA_SUCCESS,
+    FETCH_SERIE_SUCCESS,
+    FETCH_RESULT_SUCCESS,
     FETCH_DATA_FAILURE,
+
     PAGINATION,
     PAGINATIONSECOND
 } from '../constants';
 
 export const init = () => {
+    const parms = {
+        name: "Alle Serien",
+        tab: "Übersicht",
+        secondtab: "",
+        thirdtab: ""
+    };
     return dispatch => {
+        dispatch(fetchSeriesBegin());
         fetch('http://localhost/projects/racingBackend/racing.php', {
+                method: 'POST',
+                body: JSON.stringify(parms)
             })
             .then(res => res.json())
             .then(json => {
-                console.log(json);
+                json = json[0];
+                json['1'] = undefined;
+                let series = [];
+                for (let property in json) {
+                    if (json[property]){
+                        series.push(json[property]);
+                    }
+                }
+                dispatch(fetchSeriesSuccess(series));
+                return series;
             })
         .catch(error => dispatch(fetchSeriesFailure(error)));
-
-
-
-
-        /* dispatch(fetchSeriesBegin());
-        return fetch('http://localhost:3000/series', {
-            
-        }).then(res => res.json())
-            .then(json => {
-                dispatch(fetchSeriesSuccess(json));
-                return json;
-            })
-            .catch(error => dispatch(fetchSeriesFailure(error))); */
     };
 }
 
@@ -53,12 +61,20 @@ export const fetchDataBegin = () => ({
     type: FETCH_DATA_BEGIN
 });
 
-export const fetchDataSuccess = (data, page, serie) => ({
-    type: FETCH_DATA_SUCCESS,
+export const fetchSerieSuccess = (data, page, serie) => ({
+    type: FETCH_SERIE_SUCCESS,
     payload: data,
     page,
     serie
 });
+
+export const fetchResultSuccess = (data, page, serie) => ({
+    type: FETCH_RESULT_SUCCESS,
+    payload: data,
+    page,
+    serie
+});
+
 
 export const fetchDataFailure = error => ({
     type: FETCH_DATA_FAILURE,

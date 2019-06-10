@@ -3,6 +3,10 @@ import Button from '../../elements/Button';
 
 import { changePage } from '../../../actions';
 
+const fetchData = (dispatch, ownProps) => {
+    console.log(ownProps.race);
+    
+}
 
 const mapStateToProps = (state, ownProps) => ({
     active: ownProps.page === state.paginationSecond,
@@ -10,7 +14,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    onClick: () => dispatch(changePage(ownProps.page))
+    onClick: () => fetchData(dispatch, ownProps)
 })
 
 export default connect(

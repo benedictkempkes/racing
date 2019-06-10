@@ -5,7 +5,11 @@ const getRow = (data, start, end = data.length) => {
     for (let i = start; i < end; i++){
         rows.push(data[i]);
     }
-    return rows;
+    let listIndex = Object.keys(data[0])
+    let pointsIndex = listIndex[listIndex.length - 1];
+    return rows.sort(function(a, b ){
+        return b[pointsIndex] - a[pointsIndex];
+    });
 }
 
 const Standing = ({ data }) => (
@@ -15,8 +19,8 @@ const Standing = ({ data }) => (
                 <tr>
                     <td>P</td>
                     {
-                        data[0].map((item, index) => (
-                            <td key={index}>{item}</td>
+                        Object.keys(data[0]).map((item, index) => (
+                            <td key={index}>{data[0][item]}</td>
                         ))
                     }
                 </tr>
@@ -27,8 +31,10 @@ const Standing = ({ data }) => (
                         <tr key={index}>
                             <td>{index + 1}</td>
                             {
-                                row.map((col, index) => (
-                                    <td key={index}>{col}</td>
+                                Object.keys(row).map((col, index) => (
+                                    <td key={index}>
+                                        {(row[col] !== '.') ? row[col] : <span>&nbsp;</span>}
+                                    </td>
                                 ))
                             }
                         </tr>
