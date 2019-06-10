@@ -7,6 +7,7 @@ import {
     PAGINATIONSECOND,
     FETCH_DATA_BEGIN,
     FETCH_SERIE_SUCCESS,
+    FETCH_RESULT_SUCCESS,
     FETCH_DATA_FAILURE, } from '../constants';
 
 const initialState = {
@@ -20,6 +21,7 @@ const initialState = {
         team: undefined
     },
     result: undefined,
+    race: undefined,
     data: undefined,
     loading: true,
     error: null
@@ -53,6 +55,7 @@ const reducer = (state = initialState, action) => {
         case PAGINATION: {
             return {
                 ...state,
+                loading: false,
                 pagination: action.page,
                 paginationSecond: 'FAHRERWERTUNG',
                 leftNav: action.back,
@@ -74,16 +77,26 @@ const reducer = (state = initialState, action) => {
         }
         case FETCH_SERIE_SUCCESS: {
             console.log('Success!');
-            console.log(action);
             return {
                 ...state,
                 loading: false,
                 pagination: action.page,
+                serie: action.serie,
                 calendar: action.payload[0],
                 standings: {
                     driver: action.payload[1],
                     team: action.payload[2]
                 }
+            };
+        }
+        case FETCH_RESULT_SUCCESS: {
+            console.log('Success!');
+            return {
+                ...state,
+                loading: false,
+                pagination: action.page,
+                race: action.race,
+                result: action.payload
             };
         }
         case FETCH_DATA_FAILURE: {

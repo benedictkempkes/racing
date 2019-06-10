@@ -3,7 +3,8 @@ import View from './View'
 
 
 const mapStateToProps = state => ({
-    activePage: state.pagination
+    activePage: state.pagination,
+    state: console.log(state)
 })
 
 

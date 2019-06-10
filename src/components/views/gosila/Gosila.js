@@ -5,7 +5,7 @@ import GosilaController from './GosilaController';
 
 import { FAHRERWERTUNG, RENNKALENDER } from '../../../constants';
 
-const Gosila = ({ series, loading }) => (
+const Gosila = ({ series, loading, oldSerie }) => (
     <div >
         {(loading) ? undefined : series.map((serie, index) => (
             <div key={index}>
@@ -14,10 +14,10 @@ const Gosila = ({ series, loading }) => (
                 <h3>{(serie['3']) ? 'Platz: ' + serie['3'] : 'Startet bald'}</h3>
                 <h3>Team: {(serie['4']) ? serie['4'] : '-'}</h3>
                 <div>
-                    <GosilaController page={FAHRERWERTUNG} serie={serie} style='seriesButton'>
+                    <GosilaController page={FAHRERWERTUNG} serie={serie} oldSerie={oldSerie} style='seriesButton'>
                         Tabellen
                     </GosilaController>
-                    <GosilaController page={RENNKALENDER} serie={serie} style='seriesButton'>
+                    <GosilaController page={RENNKALENDER} serie={serie} oldSerie={oldSerie} style='seriesButton'>
                         Rennkalender
                     </GosilaController>
                 </div>
@@ -28,7 +28,8 @@ const Gosila = ({ series, loading }) => (
 
 const mapStateToProps = (state) => ({
     series: state.series,
-    loading: state.loading
+    loading: state.loading,
+    oldSerie: state.serie
 })
 
 export default connect(mapStateToProps)(Gosila)

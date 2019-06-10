@@ -8,15 +8,26 @@ const getRow = (data, start, end = data.length) => {
     return rows;
 }
 
+const getBestLap = (result) => {
+    let content = undefined;
+    if(result[0]['2']){
+        content = <div>
+            <span>{result[0]['1']}</span>
+            <span>{result[0]['2']}</span>
+            <span>{result[0]['3']}</span>
+        </div>
+    }
+    return content;
+}
+
 const Result = ({ result }) => (
     <div>
-        {console.log(result)}
         <table>
             <thead>
                 <tr>
                     {
-                        result[1].map((item, index) => (
-                            <td key={index}>{item}</td>
+                        Object.keys(result[1]).map((item, index) => (
+                            <td key={index}>{result[1][item]}</td>
                         ))
                     }
                 </tr>
@@ -26,8 +37,10 @@ const Result = ({ result }) => (
                     getRow(result, 2).map((row, index) => (
                         <tr key={index}>
                             {
-                                row.map((col, index) => (
-                                    <td key={index}>{col}</td>
+                                Object.keys(row).map((col, index) => (
+                                    <td key={index}>
+                                        {(row[col] !== '.') ? row[col] : <span>&nbsp;</span>}
+                                    </td>
                                 ))
                             }
                         </tr>
@@ -36,7 +49,7 @@ const Result = ({ result }) => (
             </tbody>
         </table>
         <div>
-            {result[0][0]} {result[0][1]} {result[0][2]}
+            {getBestLap(result)}
         </div>
     </div>
 )
