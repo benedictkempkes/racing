@@ -22,7 +22,8 @@ const fetchData = (dispatch, ownProps) => {
                 for (let property in json[0]) {
                     data.push(json[0][property]);
                 }
-                dispatch(fetchResultSuccess(data, ownProps.page, ownProps.race));
+                
+                dispatch(fetchResultSuccess(data, ownProps.page, ownProps.race, ownProps.place));
 
                 return data;
             })

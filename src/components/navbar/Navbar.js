@@ -6,7 +6,6 @@ import NavbarController from './NavbarController';
 
 const Navbar = ({ pagination, serie }) => (
     <div className="navbar">
-        {console.log(serie)}
         <div className="navbarItem back">
             {(pagination.BACK) ? <NavbarController page={pagination.BACK} style='navbarButton'>{pagination.BACK.NAME}</NavbarController> : undefined}
         </div>

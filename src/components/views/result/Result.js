@@ -1,4 +1,5 @@
 import React from 'react';
+import Cell from '../../elements/Cell';
 
 const getRow = (data, start, end = data.length) => {
     let rows = [];
@@ -10,37 +11,41 @@ const getRow = (data, start, end = data.length) => {
 
 const getBestLap = (result) => {
     let content = undefined;
-    if(result[0]['2']){
-        content = <div>
-            <span>{result[0]['1']}</span>
-            <span>{result[0]['2']}</span>
-            <span>{result[0]['3']}</span>
+    if(result[1]['2']){
+        content = <div className="bestLap">
+            <span style={{ color: '#33BABD'}}>{result[1]['1']} </span>
+            <span style={{ color: '#BE1DBB' }}>{result[1]['2']} </span>
+            <span style={{ color: '#BE1DBB' }}>{result[1]['3']}</span>
         </div>
     }
     return content;
 }
 
 const Result = ({ result }) => (
-    <div>
+    <div className="result">
         <table>
             <thead>
                 <tr>
                     {
-                        Object.keys(result[1]).map((item, index) => (
-                            <td key={index}>{result[1][item]}</td>
+                        Object.keys(result[2]).map((item, index) => (
+                            <Cell key={index} styling='#33BABD'>{result[2][item]}</Cell>
                         ))
                     }
                 </tr>
             </thead>
             <tbody>
                 {
-                    getRow(result, 2).map((row, index) => (
+                    getRow(result, 3).map((row, index) => (
                         <tr key={index}>
                             {
                                 Object.keys(row).map((col, index) => (
-                                    <td key={index}>
-                                        {(row[col] !== '.') ? row[col] : <span>&nbsp;</span>}
-                                    </td>
+                                    <Cell key={index}
+                                        styling={
+                                            (index < 1) ? '#33BABD' :
+                                                (index === 2) ? '#D9E346' : '#fff' 
+                                        }>
+                                        {(row[col] !== '.') ? row[col] : <span>-</span>}
+                                    </Cell>
                                 ))
                             }
                         </tr>
@@ -48,9 +53,7 @@ const Result = ({ result }) => (
                 }
             </tbody>
         </table>
-        <div>
-            {getBestLap(result)}
-        </div>
+        {getBestLap(result)}
     </div>
 )
 

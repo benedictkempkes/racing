@@ -82,6 +82,7 @@ const reducer = (state = initialState, action) => {
                 loading: false,
                 pagination: action.page,
                 serie: action.serie,
+                race: undefined,
                 calendar: action.payload[0],
                 standings: {
                     driver: action.payload[1],
@@ -96,6 +97,7 @@ const reducer = (state = initialState, action) => {
                 loading: false,
                 pagination: action.page,
                 race: action.race,
+                place: action.place,
                 result: action.payload
             };
         }

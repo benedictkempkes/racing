@@ -30,6 +30,7 @@ const Standing = ({ data, win }) => (
                 </tr>
             </thead>
             <tbody>
+                
                 {
                     getRow(data, 1).map((row, index) => (
                         <tr key={index}>

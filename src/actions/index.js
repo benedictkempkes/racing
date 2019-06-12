@@ -68,11 +68,12 @@ export const fetchSerieSuccess = (data, page, serie) => ({
     serie
 });
 
-export const fetchResultSuccess = (data, page, race) => ({
+export const fetchResultSuccess = (data, page, race, place) => ({
     type: FETCH_RESULT_SUCCESS,
     payload: data,
     page,
-    race
+    race,
+    place
 });
 
 

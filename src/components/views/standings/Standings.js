@@ -11,9 +11,14 @@ const Standings = ({ paginationSecond, standings, serie }) => (
             <StandingsController page={'FAHRERWERTUNG'} style='standingsButton'>
                 FAHRERWERTUNG
             </StandingsController>
-            <StandingsController page={'TEAMWERTUNG'} style='standingsButton'>
-                TEAMWERTUNG
-            </StandingsController>
+            {
+                (standings.team[1]) ?
+                <StandingsController page={'TEAMWERTUNG'} style='standingsButton'>
+                    TEAMWERTUNG
+                </StandingsController>
+                :
+                undefined
+            }            
         </div>
         <div className="wrapper">
             {(paginationSecond === 'FAHRERWERTUNG') ? 
