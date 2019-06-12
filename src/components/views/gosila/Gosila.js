@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './gosila.less';
 
 import GosilaController from './GosilaController';
 
 import { FAHRERWERTUNG, RENNKALENDER } from '../../../constants';
 
-const Gosila = ({ series, loading, oldSerie }) => (
-    <div >
+const Gosila = ({ series, oldSerie }) => (
+    <div className="gosila" >
         {series.map((serie, index) => (
             <div key={index}>
                 <h2>{serie['1']}</h2>
@@ -28,7 +29,6 @@ const Gosila = ({ series, loading, oldSerie }) => (
 
 const mapStateToProps = (state) => ({
     series: state.series,
-    loading: state.loading,
     oldSerie: state.serie
 })
 
