@@ -1,0 +1,52 @@
+.event {
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    min-width: 80%;
+    .image {
+        width: 20%;
+        background-size: cover;
+        background-position: center;
+    }
+    .content {
+        width: 80%;
+        .header {
+            padding: 20px;
+            h2 {
+                margin-bottom: 8px;
+            }
+            h3 {
+                margin: 2px 0px;
+                font-size: 0.9em;
+                opacity: 0.8;
+            }
+        }
+        .controls {
+            border-top: 1px solid #000;
+        }
+    }
+}
+
+.left {
+    animation: 1s ease-out 0s 1 slideleft;
+    @keyframes slideleft {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+}
+
+.right {
+    animation: 1s ease-out 0s 1 slideright;
+    @keyframes slideright {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+}
