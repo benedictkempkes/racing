@@ -7,20 +7,26 @@ import GosilaController from './GosilaController';
 import { FAHRERWERTUNG, RENNKALENDER } from '../../../constants';
 
 const Gosila = ({ series, oldSerie }) => (
-    <div className="gosila" >
+    <div className="gosila">
         {series.map((serie, index) => (
-            <div key={index}>
-                <h2>{serie['1']}</h2>
-                <h3>{(serie['2']) ? 'Nächstes Rennen: ' + serie['2'] : 'Beendet'}</h3>
-                <h3>{(serie['3']) ? 'Platz: ' + serie['3'] : 'Startet bald'}</h3>
-                <h3>Team: {(serie['4']) ? serie['4'] : '-'}</h3>
+            <div key={index} className="wrapper">
                 <div>
-                    <GosilaController page={FAHRERWERTUNG} serie={serie} oldSerie={oldSerie} style='seriesButton'>
-                        Tabellen
-                    </GosilaController>
-                    <GosilaController page={RENNKALENDER} serie={serie} oldSerie={oldSerie} style='seriesButton'>
-                        Rennkalender
-                    </GosilaController>
+                    <div className="serie">
+                        <h2>{serie['1']}</h2>
+                        <h3>{(serie['2']) ? 'Nächstes Rennen: ' + serie['2'] : 'Beendet'}</h3>
+                        <h3>{(serie['3']) ? 'Platz: ' + serie['3'] : 'Startet bald'}</h3>
+                        <h3>Team: {(serie['4']) ? serie['4'] : '-'}</h3>
+                    </div>
+                    <div className="divider">
+                        <div className="controls">
+                            <GosilaController page={FAHRERWERTUNG} serie={serie} oldSerie={oldSerie} style='seriesButton'>
+                                Tabellen
+                            </GosilaController>
+                            <GosilaController page={RENNKALENDER} serie={serie} oldSerie={oldSerie} style='seriesButton'>
+                                Rennkalender
+                            </GosilaController>
+                        </div>
+                    </div>
                 </div>
             </div>
         ))}

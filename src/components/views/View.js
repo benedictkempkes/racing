@@ -1,4 +1,6 @@
 import React from 'react';
+import './view.less';
+
 import Gosila from './gosila/Gosila';
 import Standings from './standings/Standings';
 import Calendar from './calendar/Calendar';
@@ -25,8 +27,8 @@ const getPage = activePage => {
 }
 
 const View = ({ activePage, loading }) => (
-    <div>
-        {(loading) ? undefined : getPage(activePage)}
+    <div className="view">
+        {(loading) ? <div className="loader"><div className="lds-hourglass"></div></div> : getPage(activePage)}
     </div>
 )
 

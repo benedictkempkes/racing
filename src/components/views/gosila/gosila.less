@@ -1,3 +1,36 @@
 .gosila {
-    background-color: red;
+    background-image: url('./gosila.jpg');
+    background-size: cover;
+    background-position: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 92vh;
+    .wrapper {
+        background-color: #000;
+        width: 900px;
+        margin-left: 100px;
+        transform: skewX(20deg);
+        border-radius: 5px;
+        .serie {
+            padding: 20px 100px;
+            transform: skewX(-20deg);
+            font-size: 1.4em;
+            h2 {
+                margin-bottom: 8px;
+            }
+            h3 {
+                margin: 2px 0px;
+                font-size: 0.9em;
+                opacity: 0.87;
+            }
+        }
+        .divider {
+            border-top: 1px solid #fff;
+            .controls {
+                transform: skewX(-20deg);
+                padding: 20px 0px 20px 80px;
+            }
+        }
+    }
 }
