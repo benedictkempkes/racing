@@ -1,0 +1,35 @@
+.standings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 92vh;
+    .controls {
+        margin: 50px;
+    }
+    .wrapper {
+        overflow: hidden;
+        .driver {
+            animation: 1s ease-out 0s 1 slideDriver;
+            @keyframes slideDriver {
+                0% {
+                    transform: translateY(-100%);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+        }
+        .team {
+            animation: 1s ease-out 0s 1 slideTeam;
+            @keyframes slideTeam {
+                0% {
+                    transform: translateY(-100%);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+        }
+        
+    }
+}

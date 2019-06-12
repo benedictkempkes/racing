@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Cell from '../../elements/Cell';
+
 const getRow = (data, start, end = data.length) => {
     let rows = [];
     for (let i = start; i < end; i++){
@@ -12,15 +14,17 @@ const getRow = (data, start, end = data.length) => {
     });
 }
 
-const Standing = ({ data }) => (
+const Standing = ({ data, win }) => (
     <div>
         <table>
             <thead>
                 <tr>
-                    <td>P</td>
+                    <Cell styling='#33BABD'>P</Cell>
                     {
                         Object.keys(data[0]).map((item, index) => (
-                            <td key={index}>{data[0][item]}</td>
+                            <Cell key={index} styling='#33BABD'>
+                                {(data[0][item] !== 'Nummer') ? data[0][item] : <span>&nbsp;</span>}
+                            </Cell>
                         ))
                     }
                 </tr>
@@ -29,12 +33,16 @@ const Standing = ({ data }) => (
                 {
                     getRow(data, 1).map((row, index) => (
                         <tr key={index}>
-                            <td>{index + 1}</td>
+                            <Cell styling='#33BABD'>{index + 1}</Cell>
                             {
                                 Object.keys(row).map((col, index) => (
-                                    <td key={index}>
+                                    <Cell key={index}
+                                        styling={
+                                            (index < 3 || index >= Object.keys(row).length - 1) ? '#fff' : 
+                                                (row[col] === win) ? '#BE1DBB' : '#D9E346' 
+                                        }>
                                         {(row[col] !== '.') ? row[col] : <span>&nbsp;</span>}
-                                    </td>
+                                    </Cell>
                                 ))
                             }
                         </tr>
