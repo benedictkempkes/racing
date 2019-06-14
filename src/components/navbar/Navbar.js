@@ -11,7 +11,7 @@ const Navbar = ({ pagination, serie, onClick, menu }) => (
         <div className="navbarItem back">
             {(pagination.BACK) ? <NavbarController page={pagination.BACK} style='navbarButton'>{pagination.BACK.NAME}</NavbarController> : undefined}
         </div>
-        <div className="navbarItem current" style={(pagination.NAME === 'Gosila') ? {justifyContent: 'center'}: {}}>
+        <div className="navbarItem current" style={(pagination.NAME === 'Gosila') ? {justifyContent: 'center', margin: '0px'}: {}}>
             {(pagination.NAME === 'Gosila') ? pagination.NAME : serie['1']}
         </div>
         <div className="navbarItem next">
