@@ -23,7 +23,7 @@ export const init = () => {
         dispatch(fetchSeriesBegin());
         //'http://localhost/projects/racingBackend/racing.php'
         //'https://benedictkempkes.000webhostapp.com/racingBackend/racing.php'
-        fetch('http://localhost/projects/racingBackend/racing.php', {
+        fetch('https://benedictkempkes.000webhostapp.com/racingBackend/racing.php', {
                 method: 'POST',
                 body: JSON.stringify(parms)
             })
