@@ -6,6 +6,9 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
+    output: {
+        path: __dirname
+    },
     module: {
         rules: [
             {
