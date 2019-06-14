@@ -9,8 +9,8 @@ const getCalendar = (calendar) => {
         <div className="wrapper" key={index}>
             {(index%2) ? 
                 <div className="row">
-                    <div className="itemWrapper" style={{ justifyContent: 'flex-end', marginLeft: '10px'}}>
-                        <Event key={index} place={item['1']} time={item['2']} position={item['3']} newRace={item['4']} image={item['5']} styling='left'/>
+                    <div className="itemWrapper left">
+                        <Event key={index} place={item['1']} time={item['2']} position={item['3']} newRace={item['4']} image={item['5']} styling='leftslide'/>
                         <span className="horizontal"></span>
                         <span className="vertical"></span>
                         <span className="circle" style={{ right: '-10px' }}></span>
@@ -20,11 +20,11 @@ const getCalendar = (calendar) => {
                  : 
                 <div className="row">
                     <div className="otherSide"></div>
-                    <div className="itemWrapper" style={{ justifyContent: 'flex-start', marginRight: '10px'}}>
+                    <div className="itemWrapper right">
                         <span className="circle" style={{left: '-10px'}}></span>
                         <span className="vertical"></span>
                         <span className="horizontal"></span>
-                        <Event key={index} place={item['1']} time={item['2']} position={item['3']} newRace={item['4']} image={item['5']} styling='right' />
+                        <Event key={index} place={item['1']} time={item['2']} position={item['3']} newRace={item['4']} image={item['5']} styling='rightslide' />
                     </div>
                 </div>
                  }

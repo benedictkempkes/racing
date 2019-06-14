@@ -7,6 +7,7 @@ import {
     FETCH_SERIE_SUCCESS,
     FETCH_RESULT_SUCCESS,
     FETCH_DATA_FAILURE,
+    TOGGLEMENU,
 
     PAGINATION,
     PAGINATIONSECOND
@@ -92,4 +93,9 @@ export const changePage = page => ({
 export const changePageSecond = page => ({
     type: PAGINATIONSECOND,
     page
+}); 
+
+export const toggleMenu = value => ({
+    type: TOGGLEMENU,
+    value
 });

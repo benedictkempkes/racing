@@ -5,6 +5,7 @@ import {
     GOSILA,
     PAGINATION,
     PAGINATIONSECOND,
+    TOGGLEMENU,
     FETCH_DATA_BEGIN,
     FETCH_SERIE_SUCCESS,
     FETCH_RESULT_SUCCESS,
@@ -13,6 +14,7 @@ import {
 const initialState = {
     pagination: GOSILA,
     paginationSecond: 'FAHRERWERTUNG',
+    menu: false,
     series: undefined,
     serie: undefined,
     calendar: undefined,
@@ -108,6 +110,12 @@ const reducer = (state = initialState, action) => {
                 loading: false,
                 error: action.payload.error
             };
+        }
+        case TOGGLEMENU: {
+            return {
+                ...state,
+                menu: action.value
+            }
         }
         default: {
             return state;

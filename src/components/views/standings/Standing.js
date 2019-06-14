@@ -14,7 +14,7 @@ const getRow = (data, start, end = data.length) => {
     });
 }
 
-const Standing = ({ data, win }) => (
+const Standing = ({ data, win, points }) => (
     <div>
         <table>
             <thead>
@@ -22,7 +22,10 @@ const Standing = ({ data, win }) => (
                     <Cell styling='#33BABD'>P</Cell>
                     {
                         Object.keys(data[0]).map((item, index) => (
-                            <Cell key={index} styling='#33BABD'>
+                            <Cell key={index} styling='#33BABD' responsive={
+                                (index >= 3 && index < Object.keys(data[0]).length - 1) ? 'tablet' :
+                                    (index === points || index === Object.keys(data[0]).length - 1) ? '' : 'mobile'
+                            }>
                                 {(data[0][item] !== 'Nummer') ? data[0][item] : <span>&nbsp;</span>}
                             </Cell>
                         ))
@@ -41,6 +44,10 @@ const Standing = ({ data, win }) => (
                                         styling={
                                             (index < 3 || index >= Object.keys(row).length - 1) ? '#fff' : 
                                                 (row[col] === win) ? '#BE1DBB' : '#D9E346' 
+                                        }
+                                        responsive={
+                                            (index >= 3 && index < Object.keys(row).length - 1) ? 'tablet' :
+                                                (index === points || index === Object.keys(row).length - 1) ? '': 'mobile'
                                         }>
                                         {(row[col] !== '.') ? row[col] : <span>&nbsp;</span>}
                                     </Cell>

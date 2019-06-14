@@ -9,7 +9,6 @@
                     width: 50%;
                 }
                 .itemWrapper{
-                    overflow: hidden;
                     width: 50%;
                     display: flex;
                     position: relative;
@@ -30,6 +29,62 @@
                         background-color: #fff;
                         align-self: center;
                         border-radius: 30px;
+                    }
+                }
+                .left {
+                    justify-content: flex-end;
+                    margin-left: 10px;
+                }
+
+                .right {
+                    justify-content: flex-start;
+                    margin-right: 10px;
+                }
+                @media screen and(max-width: 1150px) {
+                    .otherSide {
+                        display: none;
+                    }
+                    .itemWrapper {
+                        width: 100%;
+                        margin: 0px 0px 30px;
+                        .event {
+                            border-radius: 5px;
+                        }
+                        .horizontal,
+                        .vertical,
+                        .circle {
+                            display: none;
+                        }
+                    }
+                    .left {
+                        justify-content: center;
+                        margin-left: 0px;
+                    }
+
+                    .right {
+                        justify-content: center;
+                        margin-right: 0px;
+                    }
+                }
+                @media screen and(max-width: 600px){
+                    .itemWrapper {
+                        .event {
+                            width: 100%;
+                            border-radius: 0px;
+                            .image {
+                                display: none;
+                            }
+                            .content {
+                                width: 100%;
+                                text-align: center;
+                                h2 {
+                                    font-size: 1.1em;
+                                }
+                                .controls {
+                                    justify-content: center;
+                                }
+                            }
+                        }
                     }
                 }
             }

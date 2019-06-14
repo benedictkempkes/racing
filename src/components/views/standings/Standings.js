@@ -22,8 +22,8 @@ const Standings = ({ paginationSecond, standings, serie }) => (
         </div>
         <div className="wrapper">
             {(paginationSecond === 'FAHRERWERTUNG') ? 
-            <div className="driver"><Standing data={standings.driver} win={serie['5']}/></div> : 
-            <div className="team"><Standing data={standings.team} win={serie['6']} /></div>}
+                <div className="driver"><Standing data={standings.driver} win={serie['5']} points={1}/></div> : 
+                <div className="team"><Standing data={standings.team} win={serie['6']} points={0}/></div>}
         </div>
     </div>
 )

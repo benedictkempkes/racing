@@ -9,6 +9,8 @@ export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE';
 
 export const PAGINATION = 'PAGINATION';
 export const PAGINATIONSECOND = 'PAGINATIONSECOND';
+export const TOGGLEMENU = 'TOGGLEMENU';
+
 
 
 export const GOSILA = {
