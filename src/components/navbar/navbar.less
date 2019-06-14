@@ -22,13 +22,13 @@
         justify-content: flex-end;
     }
     .menuButtons {
+        display: none;
         padding: 6px;
-        display: flex;
         flex-direction: column;
         align-items: center;
         background-color: #000;
         margin-right: 20px;
-        width: 48px;
+        width: 36px;
         border-radius: 50px;
         &:hover{
             background-color: rgba(255, 255, 255, 0.1);
@@ -38,16 +38,38 @@
         }
         .circle{
             margin: 2px 0px;
-            width: 8px;
-            height: 8px;
+            width: 4px;
+            height: 4px;
             border-radius: 20px;
             background-color: #fff;
         }
     }
     .menu {
+        display: none;
         position: absolute;
+        z-index: 1;
         right: 5px;
         top: 7.9vh;
-        box-shadow: 0 5px 5px -3px rgba(250,250,250,.2), 0 8px 10px 1px rgba(250,250,250,.14), 0 3px 14px 2px rgba(250,250,250,.12);
+        .navbarItem > * {
+            padding: 10px;
+            margin: 0px;
+            background: #fff;
+            color: #000;
+            font-size: 0.8em;
+        }
+    }
+    @media screen and(max-width: 800px) {
+        .menuButtons,
+        .menu {
+            display: flex;
+        }
+        .back,
+        .next{
+            display: none;
+        }
+        .current {
+            justify-content: flex-start;
+            margin-left: 20px;
+        }
     }
 }

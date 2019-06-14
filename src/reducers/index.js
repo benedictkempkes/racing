@@ -26,7 +26,7 @@ const initialState = {
     race: undefined,
     data: undefined,
     loading: true,
-    error: null
+    error: undefined
 };
 
 const reducer = (state = initialState, action) => {
@@ -51,7 +51,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                error: action.payload.error
+                error: action.payload
             };
         }
         case PAGINATION: {
@@ -60,6 +60,7 @@ const reducer = (state = initialState, action) => {
                 loading: false,
                 pagination: action.page,
                 paginationSecond: 'FAHRERWERTUNG',
+                menu: false,
                 leftNav: action.back,
                 rightNav: action.next
             };
@@ -67,7 +68,8 @@ const reducer = (state = initialState, action) => {
         case PAGINATIONSECOND: {
             return {
                 ...state,
-                paginationSecond: action.page
+                paginationSecond: action.page,
+                menu: false
             };
         }
         case FETCH_DATA_BEGIN: {
@@ -83,6 +85,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 pagination: action.page,
+                menu: false,
                 serie: action.serie,
                 race: undefined,
                 calendar: action.payload[0],
@@ -98,6 +101,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 pagination: action.page,
+                menu: false,
                 race: action.race,
                 place: action.place,
                 result: action.payload
@@ -108,7 +112,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                error: action.payload.error
+                error: action.payload
             };
         }
         case TOGGLEMENU: {

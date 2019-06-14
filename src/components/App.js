@@ -1,14 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './layout.less';
 
 import Navbar from './navbar/Navbar';
-import ViewController from './views/ViewController'
+import ViewController from './views/ViewController';
+import Error from '../components/views/Error';
 
-const App = () => (
+const App = ({ error }) => (
     <div className="app">
+        {console.log(error)}
         <Navbar />
-        <ViewController />
+        {(error) ? <Error /> : < ViewController />}
     </div>
 )
 
-export default App
+const mapStateToProps = (state) => ({
+    error: state.error
+})
+
+export default connect(mapStateToProps)(App)

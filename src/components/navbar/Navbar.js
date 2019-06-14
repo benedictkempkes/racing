@@ -11,23 +11,23 @@ const Navbar = ({ pagination, serie, onClick, menu }) => (
         <div className="navbarItem back">
             {(pagination.BACK) ? <NavbarController page={pagination.BACK} style='navbarButton'>{pagination.BACK.NAME}</NavbarController> : undefined}
         </div>
-        <div className="navbarItem">
+        <div className="navbarItem current" style={(pagination.NAME === 'Gosila') ? {justifyContent: 'center'}: {}}>
             {(pagination.NAME === 'Gosila') ? pagination.NAME : serie['1']}
         </div>
         <div className="navbarItem next">
             {(pagination.NEXT) ? <NavbarController page={pagination.NEXT} style='navbarButton'>{pagination.NEXT.NAME}</NavbarController> : undefined}
         </div>
-        <button className="menuButtons" onClick={() => onClick((menu) ? false : true)}>
+        {(pagination.BACK || pagination.NEXT) ? <button className="menuButtons" onClick={() => onClick((menu) ? false : true)}>
             <span className="circle"></span>
             <span className="circle"></span>
             <span className="circle"></span>
-        </button>
-        {(menu) ? <div className="menu">
-            <div className="navbarItem back">
-                {<NavbarController page={pagination} style='navbarButton'>{pagination.NAME}</NavbarController>}
+        </button> : undefined}
+        {(menu) ? <div className="menu" onBlur={() => onClick(false)}>
+            <div className="navbarItem">
+                {(pagination.BACK) ? <NavbarController page={pagination.BACK} style='navbarButton'>{pagination.BACK.NAME}</NavbarController> : undefined}
             </div>
-            <div className="navbarItem next">
-                {<NavbarController page={pagination} style='navbarButton'>{pagination.NAME}</NavbarController>}
+            <div className="navbarItem">
+                {(pagination.NEXT) ? <NavbarController page={pagination.NEXT} style='navbarButton'>{pagination.NEXT.NAME}</NavbarController> : undefined}
             </div>
         </div> : undefined}
     </div>
