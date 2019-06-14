@@ -11,7 +11,7 @@ const fetchData = (dispatch, ownProps) => {
         thirdtab: 'Teamwertung'
     }
     if (ownProps.oldSerie !== ownProps.serie){
-        return fetch('http://localhost/projects/racingBackend/racing.php', {
+        return fetch('https://benedictkempkes.000webhostapp.com/racingBackend/racing.php', {
             method: 'POST',
             body: JSON.stringify(parms)
         })
