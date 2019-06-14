@@ -10,7 +10,7 @@ const getRow = (data, start, end = data.length) => {
     let listIndex = Object.keys(data[0])
     let pointsIndex = listIndex[listIndex.length - 1];
     return rows.sort(function(a, b ){
-        return b[pointsIndex] - a[pointsIndex];
+        return b[pointsIndex].replace(/,/g, '.') - a[pointsIndex].replace(/,/g, '.');
     });
 }
 
