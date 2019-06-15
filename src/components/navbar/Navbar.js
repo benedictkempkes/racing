@@ -18,7 +18,6 @@ class Navbar extends React.Component {
         document.removeEventListener('click', this.handleClick);
     }
     handleClick(e){
-        console.log(e.target.className );
         if (e.target.className !== 'navbarButton' &&
             e.target.className !=='menuButtons' &&
             e.target.className !== 'circle'){
