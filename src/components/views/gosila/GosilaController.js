@@ -40,7 +40,7 @@ const fetchData = (dispatch, ownProps) => {
 
 
 const mapStateToProps = (state, ownProps) => ({
-    active: ownProps.page === state.pagination,
+    active: ownProps.active,
     style: ownProps.style
 })
 

@@ -8,6 +8,7 @@ import { FAHRERWERTUNG, RENNKALENDER } from '../../../constants';
 
 const Gosila = ({ series, oldSerie }) => (
     <div className="gosila">
+        <div className="containerSerie">
         {series.map((serie, index) => (
             <div key={index} className="wrapper">
                 <div>
@@ -19,10 +20,10 @@ const Gosila = ({ series, oldSerie }) => (
                     </div>
                     <div className="divider">
                         <div className="controls">
-                            <GosilaController page={FAHRERWERTUNG} serie={serie} oldSerie={oldSerie} style='seriesButton'>
+                            <GosilaController page={FAHRERWERTUNG} serie={serie} oldSerie={oldSerie} style='seriesButton' active={(serie['3']) ? false : true}>
                                 Tabellen
                             </GosilaController>
-                            <GosilaController page={RENNKALENDER} serie={serie} oldSerie={oldSerie} style='seriesButton'>
+                            <GosilaController page={RENNKALENDER} serie={serie} oldSerie={oldSerie} style='seriesButton' active={(serie['3']) ? false : true}>
                                 Rennkalender
                             </GosilaController>
                         </div>
@@ -30,6 +31,7 @@ const Gosila = ({ series, oldSerie }) => (
                 </div>
             </div>
         ))}
+        </div>
     </div >
 )
 

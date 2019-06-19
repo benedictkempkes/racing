@@ -3,84 +3,95 @@
     background-size: cover;
     background-position: right;
     display: flex;
-    flex-direction: column;
     min-height: 92vh;
     @media screen and(max-width: 1150px) {
         background-position: left;
     }
-    @media screen and(max-width: 600px) {
+    @media screen and(max-width: 770px) {
         background-image: none;
     }
-    .wrapper {
-        margin-top: 100px;
-        background-color: #000;
-        width: 900px;
-        margin-left: 100px;
-        transform: skewX(20deg);
-        border-radius: 5px;
-        .serie {
-            padding: 20px 100px;
-            transform: skewX(-20deg);
-            font-size: 1.4em;
-            h2 {
-                margin-bottom: 8px;
-            }
-            h3 {
-                margin: 2px 0px;
-                font-size: 0.9em;
-                opacity: 0.87;
-            }
-        }
-        .divider {
-            border-top: 1px solid #fff;
-            .controls {
-                transform: skewX(-20deg);
-                padding: 20px 0px 20px 80px;
-            }
-        }
+    .containerSerie{
+        width: 100%;
+        padding: 30px 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         @media screen and(max-width: 1150px) {
-            align-self: center;
-            width: 80%;
-            transform: skewX(0deg);
-            margin: 50px 0px 0px;
-            .serie {
-                transform: skewX(0deg);
-                padding: 20px 60px;
-                h2 {
-                    font-size: 1.1em;
-                }
-                h3 {
-                    font-size: 0.8em;
-                }
-            }
-            .divider {
-                .controls {
-                    transform: skewX(0deg);
-                }
-            }
+            padding: 30px;
         }
-        @media screen and(max-width: 600px) {
-            width: 100%;
-            border-radius: 0px;
-            margin: 0px;
-            border-bottom: 5px solid #fff;
+        @media screen and(max-width: 770px) {
+            padding: 30px 0px;
+        }
+        .wrapper {
+            margin: 30px 0px;
+            background-color: #000;
+            width: 900px;
+            transform: skewX(20deg);
+            border-radius: 5px;
             .serie {
-                text-align: center;
-                transform: skewX(0deg);
-                padding: 20px 40px;
+                padding: 20px 100px;
+                transform: skewX(-20deg);
+                font-size: 1.4em;
                 h2 {
-                    font-size: 0.9em;
+                    margin-bottom: 8px;
                 }
                 h3 {
-                    font-size: 0.7em;
+                    margin: 2px 0px;
+                    font-size: 0.9em;
+                    opacity: 0.87;
                 }
             }
             .divider {
+                border-top: 1px solid #fff;
                 .controls {
+                    transform: skewX(-20deg);
+                    padding: 20px 0px 20px 80px;
+                }
+            }
+            @media screen and(max-width: 1150px) {
+                align-self: center;
+                width: 80%;
+                transform: skewX(0deg);
+                margin: 50px 0px 0px;
+                .serie {
                     transform: skewX(0deg);
-                    padding: 20px;
-                    display: flex;
-                    justify-content: space-around;
+                    padding: 20px 60px;
+                    h2 {
+                        font-size: 1.1em;
+                    }
+                    h3 {
+                        font-size: 0.8em;
+                    }
+                }
+                .divider {
+                    .controls {
+                        transform: skewX(0deg);
+                    }
+                }
+            }
+            @media screen and(max-width: 770px) {
+                width: 100%;
+                border-radius: 0px;
+                margin: 0px;
+                border-bottom: 5px solid #fff;
+                .serie {
+                    text-align: center;
+                    transform: skewX(0deg);
+                    padding: 20px 40px;
+                    h2 {
+                        font-size: 0.9em;
+                    }
+                    h3 {
+                        font-size: 0.7em;
+                    }
+                }
+                .divider {
+                    .controls {
+                        transform: skewX(0deg);
+                        padding: 20px;
+                        display: flex;
+                        justify-content: space-around;
+                    }
                 }
             }
         }
