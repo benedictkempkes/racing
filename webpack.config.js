@@ -6,6 +6,9 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
+    devServer: {
+      https: true  
+    },
     output: {
         path: __dirname
     },

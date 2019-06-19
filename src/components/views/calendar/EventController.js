@@ -12,7 +12,7 @@ const fetchData = (dispatch, ownProps) => {
         thirdtab: ''
     }
     if(ownProps.race !== ownProps.oldRace){
-        return fetch('http://benedictkempkes.de/racingBackend/racing.php', {
+        return fetch('https://benedictkempkes.de/racingBackend/racing.php', {
             method: 'POST',
             body: JSON.stringify(parms)
         })
