@@ -16,7 +16,7 @@ const App = ({ error }) => (
         {(error) ? <Error /> : < ViewController />}
         <footer className="footer">
             <a href="https://github.com/benedictkempkes/racing" target="_blank"><Code />&nbsp;Source Code</a>
-            <a href="https://www.xing.com/profile/Benedict_Kempkes" target="_blank"><Person />&nbsp;Xing Profile</a>
+            <a href="https://www.xing.com/profile/Benedict_Kempkes" target="_blank"><Person />&nbsp;Xing</a>
         </footer>
     </div>
 )

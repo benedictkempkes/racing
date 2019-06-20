@@ -5,6 +5,11 @@ import { fetchDataBegin, fetchResultSuccess, fetchDataFailure, changePage } from
 
 const fetchData = (dispatch, ownProps) => {
     dispatch(fetchDataBegin());
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
     const parms = {
         name: ownProps.serie['1'],
         tab: ownProps.race,

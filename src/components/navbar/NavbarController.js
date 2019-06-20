@@ -6,6 +6,11 @@ import { GOSILA, FAHRERWERTUNG, RENNKALENDER} from '../../constants';
 
 const getPage = (page) => {
     let nextPage;
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
     switch (page.PAGINATION) {
         case GOSILA.PAGINATION:
             nextPage = GOSILA;
