@@ -31,7 +31,7 @@ class Navbar extends React.Component {
                 <div className="navbarItem back">
                     {(pagination.BACK) ? <NavbarController page={pagination.BACK} style='navbarButton'>{pagination.BACK.NAME}</NavbarController> : undefined}
                 </div>
-                <div className="navbarItem current" style={(pagination.NAME === 'Gosila') ? { justifyContent: 'center', margin: '0px' } : {}}>
+                <div className="navbarItem current" style={(pagination.NAME === 'Gosila') ? { justifyContent: 'center'} : {}}>
                     {(pagination.NAME === 'Gosila') ? pagination.NAME : serie['1']}
                 </div>
                 <div className="navbarItem next">
