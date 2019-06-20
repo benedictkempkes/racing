@@ -1,15 +1,16 @@
 .results {
-    min-height: 82vh;
-    padding: 2vh 0px;
+    min-height: 86vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     .controls {
+        margin-top: 60px;
+        margin-bottom: 30px;
         display: flex;
         align-items: flex-start;
-        margin: 50px 0px;
         @media screen and(max-width: 1150px) {
-            margin: 20px 0px;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
         & * {
             margin: 0px 20px;
@@ -23,7 +24,8 @@
         justify-content: center;
     }
     .wrapper{
-        margin: 20px 0px 40px 0px;
+        margin-top: 30px;
+        margin-bottom: 60px;
         display: flex;
         justify-content: center;
         width: 100%;
@@ -39,7 +41,7 @@
                 }
             }
             .bestLap{
-                padding: 20px 0px;
+                padding: 20px 0px 0px 0px;
                 display: flex;
                 justify-content: space-evenly;
             }
@@ -58,6 +60,10 @@
             }
             @media screen and (max-width: 600px){
             }
+        }
+        @media screen and(max-width: 1150px) {
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
     }
 }

@@ -1,20 +1,22 @@
 .standings {
-    min-height: 82vh;
-    padding: 2vh 0px;
+    min-height: 86vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     .controls {
-        margin: 50px 0px;
+        margin-top: 60px;
+        margin-bottom: 30px;
         width: 100%;
         display: flex;
         justify-content: center;
         @media screen and(max-width: 1150px) {
-            margin: 20px 0px;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
     }
     .wrapper {
-        margin: 20px 0px 40px 0px;
+        margin-top: 30px;
+        margin-bottom: 60px;
         overflow: hidden;
         .driver {
             animation: 1s ease-out 0s 1 slideDriver;
@@ -37,6 +39,10 @@
                     transform: translateY(0);
                 }
             }
+        }
+        @media screen and(max-width: 1150px) {
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
         
     }
